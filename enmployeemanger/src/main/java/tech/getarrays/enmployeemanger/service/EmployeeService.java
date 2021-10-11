@@ -2,6 +2,7 @@ package tech.getarrays.enmployeemanger.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import tech.getarrays.enmployeemanger.exception.UserNotFoundException;
 import tech.getarrays.enmployeemanger.model.Employee;
 import tech.getarrays.enmployeemanger.repo.EmployeeRepo;
 
@@ -31,7 +32,7 @@ public class EmployeeService {
     }
 
     public Employee findEmployeeById(Long id){
-        return employeeRepo.findEmployeeById(id).orElseThrow(() -> new UserNotFoundException ("User by id " + id + "not found"));
+        return employeeRepo.findEmployeeById(id).orElseThrow(() -> new UserNotFoundException("User by id " + id + "not found"));
     }
 
     public void deleteEmployee(Long id){
