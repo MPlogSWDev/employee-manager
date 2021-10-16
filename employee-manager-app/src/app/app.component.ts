@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Employee } from './employee';
 import { EmployeeService } from './employee.service';
 import { HttpErrorResponse } from '@angular/common/http';
+import { NgForm } from '@angular/forms';
+
 
 @Component({
   selector: 'app-root',
@@ -10,7 +12,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 })
 export class AppComponent implements OnInit{
   [x: string]: any;
-  public employees: Employee[];
+  public employees: Employee[] = [];
   
 
   constructor(private employeeService: EmployeeService){}
